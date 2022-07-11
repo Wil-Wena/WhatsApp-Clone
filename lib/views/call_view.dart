@@ -21,17 +21,69 @@ class CallView extends StatelessWidget {
     return Column(
       children: [
         Expanded(
-          child: Container(
-            color: Colors.white,
-            child: Padding(
-              padding: const EdgeInsets.symmetric(vertical: 12, horizontal: 8),
-              child: ListView(children: [
-                CallTile(imgFromOnline[0], "userName", true, "date", "time"),
-                CallTile(imgFromOnline[0], "userName", false, "date", "time"),
-              ]),
-            ),
+          child: Stack(
+            children: [
+              Container(
+                color: Colors.white,
+                child: Padding(
+                  padding:
+                      const EdgeInsets.symmetric(vertical: 12, horizontal: 8),
+                  child: ListView(children: [
+                    CallTile(
+                        imgFromOnline[0], "userName", true, "date", "time"),
+                    CallTile(
+                        imgFromOnline[6], "userName", false, "date", "time"),
+                    CallTile(
+                        imgFromOnline[5], "userName", true, "date", "time"),
+                    CallTile(
+                        imgFromOnline[1], "userName", true, "date", "time"),
+                    CallTile(
+                        imgFromOnline[3], "userName", true, "date", "time"),
+                    CallTile(
+                        imgFromOnline[2], "userName", false, "date", "time"),
+                    CallTile(
+                        imgFromOnline[1], "userName", false, "date", "time"),
+                    CallTile(
+                        imgFromOnline[5], "userName", true, "date", "time"),
+                    CallTile(
+                        imgFromOnline[6], "userName", false, "date", "time"),
+                    CallTile(
+                        imgFromOnline[0], "userName", true, "date", "time"),
+                    CallTile(
+                        imgFromOnline[5], "userName", false, "date", "time"),
+                    CallTile(
+                        imgFromOnline[4], "userName", false, "date", "time"),
+                    CallTile(
+                        imgFromOnline[2], "userName", true, "date", "time"),
+                    CallTile(
+                        imgFromOnline[3], "userName", true, "date", "time"),
+                    CallTile(
+                        imgFromOnline[6], "userName", false, "date", "time"),
+                  ]),
+                ),
+              ),
+              Column(
+                mainAxisAlignment: MainAxisAlignment.end,
+                children: [
+                  Padding(
+                    padding:
+                        const EdgeInsets.symmetric(vertical: 12, horizontal: 8),
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.end,
+                      children: [
+                        FloatingActionButton(
+                          onPressed: () {},
+                          backgroundColor: Colors.green,
+                          child: Icon(Icons.phone),
+                        ),
+                      ],
+                    ),
+                  ),
+                ],
+              )
+            ],
           ),
-        )
+        ),
       ],
     );
   }

@@ -15,40 +15,43 @@ Widget CallTile(String imgFromOnline, String userName, bool callType,
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
-            Column(
-              mainAxisAlignment: MainAxisAlignment.start,
-              children: [
-                Text(
-                  userName,
-                  style: TextStyle(fontWeight: FontWeight.w500),
-                ),
-                Row(
-                  children: [
-                    if (callType)
-                      // ignore: prefer_const_constructors
-                      Icon(
-                        Icons.call_missed_sharp,
-                        color: Colors.red,
-                      ),
-                    if (!callType)
-                      Icon(
-                        Icons.call_made,
-                        color: Colors.green,
-                      ),
-                    Text(date, style: TextStyle(color: Colors.grey)),
-                    Text(",", style: TextStyle(color: Colors.grey)),
-                    Text(time, style: TextStyle(color: Colors.grey))
-                  ],
-                ),
-              ],
+            Padding(
+              padding: const EdgeInsets.symmetric(vertical: 20, horizontal: 10),
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.start,
+                children: [
+                  Text(
+                    userName,
+                    style: TextStyle(fontWeight: FontWeight.w500),
+                  ),
+                  Row(
+                    children: [
+                      if (callType)
+                        // ignore: prefer_const_constructors
+                        Icon(
+                          Icons.call_missed_sharp,
+                          color: Colors.red,
+                        ),
+                      if (!callType)
+                        Icon(
+                          Icons.call_made,
+                          color: Colors.green,
+                        ),
+                      Text(date, style: TextStyle(color: Colors.grey)),
+                      Text(",", style: TextStyle(color: Colors.grey)),
+                      Text(time, style: TextStyle(color: Colors.grey))
+                    ],
+                  ),
+                ],
+              ),
             ),
             Icon(
               Icons.call,
               color: Colors.green,
-            )
+            ),
           ],
         ),
-      )
+      ),
     ],
   );
 }

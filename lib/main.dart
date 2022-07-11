@@ -41,38 +41,45 @@ class _WhatsApp_CloneState extends State<WhatsApp_Clone> {
     return DefaultTabController(
       length: 4,
       child: Scaffold(
-          appBar: AppBar(
-            title: Text("WhatsApp_Clone"),
-            backgroundColor: mainColor,
-            elevation: 0.0,
-            actions: [
-              IconButton(onPressed: () {}, icon: Icon(Icons.search)),
-              IconButton(onPressed: () {}, icon: Icon(Icons.more_vert)),
-            ],
-            flexibleSpace: Container(),
-            bottom:
-                TabBar(indicatorColor: Colors.white, indicatorWeight: 1, tabs: [
-              Padding(
-                padding: const EdgeInsets.only(left: 0, right: 50),
-                child: Container(
-                  width: 15,
-                  alignment: Alignment.topLeft,
-                  child: IconButton(
-                    onPressed: () {},
-                    icon: Icon(Icons.photo_camera),
-                    iconSize: 16.0,
-                  ),
+        appBar: AppBar(
+          title: Text("WhatsApp_Clone"),
+          backgroundColor: mainColor,
+          elevation: 0.0,
+          actions: [
+            IconButton(onPressed: () {}, icon: Icon(Icons.search)),
+            IconButton(onPressed: () {}, icon: Icon(Icons.more_vert)),
+          ],
+          flexibleSpace: Container(),
+          bottom:
+              TabBar(indicatorColor: Colors.white, indicatorWeight: 1, tabs: [
+            Padding(
+              padding: const EdgeInsets.only(left: 0, right: 50),
+              child: Container(
+                width: 15,
+                alignment: Alignment.topLeft,
+                child: IconButton(
+                  onPressed: () {},
+                  icon: Icon(Icons.photo_camera),
+                  iconSize: 16.0,
                 ),
               ),
-              Text("CHATS"),
-              Text("STATUS"),
-              Text("CALLS"),
-            ]),
-            titleSpacing: 20,
-          ),
-          body: TabBarView(
-            children: [CameraView(), chat_view(), StatusView(), CallView()],
-          )),
+            ),
+            Text("CHATS"),
+            Text("STATUS"),
+            Text("CALLS"),
+          ]),
+          titleSpacing: 20,
+        ),
+        body: TabBarView(
+          // ignore: prefer_const_constructors
+          children: [
+            CameraView(),
+            chat_view(),
+            StatusView(),
+            CallView(),
+          ],
+        ),
+      ),
     );
   }
 }
